@@ -11,5 +11,8 @@ export default defineConfig({
       '@': resolve('./src')
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
+  },
+  build:{
+    outDir:"docs"
   }
 })
