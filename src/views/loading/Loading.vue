@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="w-200px h-200px flex justify-center items-center">
+    <div class="h-full flex justify-center items-center">
+        <div class="w-200px h-200px flex justify-center items-center p-2 bg-gray/50 rounded">
             <div class="loading">
                 <div v-for="i in 36" class="dot"></div>
             </div>
@@ -55,7 +55,7 @@ $pDeg:calc(360deg/$n);
             border-radius: 50%;
         }
         &::before{
-            background: #666;
+            background: #000;
             top:-100%;
             animation: rotation-black $d infinite;
             

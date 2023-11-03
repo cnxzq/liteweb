@@ -12,6 +12,10 @@ const routes:RouteRecordRaw[]= [
     {
         path:'/drag',
         component:()=>import('@/views/drag/Drag.vue')
+    },
+    {
+        path:'/viewer',
+        component:()=>import('@/views/viewer/Viewer.vue')
     }
 ]
 

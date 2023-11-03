@@ -1,33 +1,32 @@
 <template>
-    <v-sheet class="d-flex flex-column">
+    <v-sheet class="flex! flex-col">
         <v-toolbar title="LiteWeb">
-            <v-btn variant="tonal" prepend-icon="mdi-checkbox-marked-circle">按钮</v-btn>
+            <v-btn variant="tonal" :to="items[0].to" prepend-icon="mdi-checkbox-marked-circle">drag</v-btn>
             <v-btn variant="tonal" prepend-icon="mdi-checkbox-marked-circle">按钮</v-btn>
             <v-btn variant="tonal" prepend-icon="mdi-checkbox-marked-circle">按钮</v-btn>
             <v-avatar color="surface-variant"></v-avatar>
         </v-toolbar>
-        <v-sheet class="flex-1-1 d-flex flex-row">
+        <v-sheet class="flex-1 h-0 flex! flex-row">
             <v-card class="mx-auto" max-width="300">
-                <v-list density="compact">
+                <v-list density="compact" v-model:selected="current">
                     <v-list-subheader>
                         <v-icon icon="mdi-home"></v-icon>
-                        二级菜单
+                        菜单
                     </v-list-subheader>
 
-                    <v-list-item v-for="(item, i) in items" :key="i" :value="item" color="primary">
+                    <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" :value="item.to" color="primary">
                         <template v-slot:prepend>
                             <v-icon :icon="item.icon"></v-icon>
                         </template>
-
                         <v-list-item-title v-text="item.text"></v-list-item-title>
                     </v-list-item>
                 </v-list>
             </v-card>
-            <v-sheet class="flex-1-1">
+            <v-sheet class="flex-1 w-0">
                 <slot></slot>
             </v-sheet>
         </v-sheet>
-        <v-footer class="bg-grey-lighten-1">
+        <!-- <v-sheet class="bg-grey-lighten-1">
             <v-row justify="center" no-gutters>
                 <v-btn v-for="link in links" :key="link" color="white" variant="text" class="mx-2" rounded="xl">
                     {{ link }}
@@ -36,17 +35,31 @@
                     {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
                 </v-col>
             </v-row>
-        </v-footer>
+        </v-sheet> -->
     </v-sheet>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+import {useRoute,useRouter} from 'vue-router'
+
+const route = useRoute();
+const router = useRouter();
 
 const items = [
-    { text: '菜单一', icon: 'mdi-clock' },
-    { text: '菜单二', icon: 'mdi-account' },
-    { text: '菜单三', icon: 'mdi-flag' },
+    { text: '加载动画', icon: 'mdi-account', to:'/loading' },
+    { text: '拖拽', icon: 'mdi-clock', to:'/drag' },
+    { text: '查看器', icon: 'mdi-flag', to:'/viewer' },
 ]
+
+router.beforeEach((to,from,next)=>{
+    if(to.path){
+        current.value = [to.path]
+    }
+    next();
+})
+
+const current= ref([route.path||items[0].to]);
 
 const links = [
     'Home',

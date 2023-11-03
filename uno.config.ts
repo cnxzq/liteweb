@@ -13,13 +13,13 @@ export default defineConfig({
   ],
   presets: [
     presetUno(),
-    presetAttributify(),
-    presetIcons(),
-    presetTypography(),
-    presetWebFonts({
-      fonts: {
-        // ...
-      }
-    })
+    //presetAttributify(),
+    //presetIcons(),
+    //presetTypography(),
+    // presetWebFonts({
+    //   fonts: {
+    //     // ...
+    //   }
+    // })
   ]
 })
