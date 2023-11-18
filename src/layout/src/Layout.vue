@@ -42,15 +42,19 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import {useRoute,useRouter} from 'vue-router'
+import {routes} from '@/router'
 
 const route = useRoute();
 const router = useRouter();
 
-const items = [
-    { text: '加载动画', icon: 'mdi-account', to:'/loading' },
-    { text: '拖拽', icon: 'mdi-clock', to:'/drag' },
-    { text: '查看器', icon: 'mdi-flag', to:'/viewer' },
-]
+
+const items = routes.filter(item=>!item.meta.hidden).map(item=>{
+    return {
+        text: item.meta.title, 
+        icon: item.meta.icon, 
+        to:item.path
+    }
+})
 
 router.beforeEach((to,from,next)=>{
     if(to.path){

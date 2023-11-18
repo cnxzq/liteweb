@@ -2,10 +2,10 @@
     <div class="h-full flex flex-col">
         <div class="p-2">
             显示区域
-            <input class="w-20" v-model="args.viewBox[0]" type="number">
-            <input class="w-20" v-model="args.viewBox[1]" type="number">
-            <input class="w-20" v-model="args.viewBox[2]" type="number">
-            <input class="w-20" v-model="args.viewBox[3]" type="number">
+            left:<input class="w-20" v-model="args.viewBox[0]" type="number">
+            top:<input class="w-20" v-model="args.viewBox[1]" type="number">
+            width:<input class="w-20" v-model="args.viewBox[2]" type="number">
+            height:<input class="w-20" v-model="args.viewBox[3]" type="number">
         </div>
         <ViewerBox is-debug :auto-scale="true" :scale="1" class="flex-1 h-0 overflow-hidden bg-gray/20" :view-box="args.viewBox">
             <div class="flex flex-col">
