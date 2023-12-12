@@ -14,6 +14,7 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "allowJs": true,
     "noEmit": true,
     "jsx": "preserve",
 
@@ -27,6 +28,6 @@
     },
     "typeRoots": ["./node_modules/@types/","./types"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","types/**/*.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","types/**/*.d.ts", "src/views/particles/p.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

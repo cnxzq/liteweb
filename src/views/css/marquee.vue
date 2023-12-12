@@ -1,8 +1,15 @@
 <template>
-    <div class="marquee">
-        <span> 内容过长的的时候会自动跑动，内容过长的的时候会自动跑动，内容过长的的时候会自动跑动 </span>
-    </div>
-    <h3>内容过长的的时候会自动跑动</h3>
+	<div>
+		<div class="marquee">
+			<span> 
+				<span class="px-2" v-for="i in 20">{{i}}</span>
+			</span>
+		</div>
+		<div class="marquee">
+			<span> 内容过长的的时</span>
+		</div>
+		<h3>内容过长的的时候会自动跑动</h3>
+	</div>
 </template>
 
 <style scoped>
@@ -18,13 +25,19 @@
 	container-type: inline-size;
 	
 	> * {
-		animation: marquee 3s linear infinite both alternate;
+		animation: marquee 3s linear infinite both normal;
 	}
 }
 
 @keyframes marquee {
-	to {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
 		transform: translateX(min(100cqw - 100%, 0px));
 	}
+	/* to {
+		transform: translateX(min(100cqw - 100%, 0px));
+	} */
 }
 </style>
