@@ -14,7 +14,7 @@
                         菜单
                     </v-list-subheader>
 
-                    <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" :value="item.to" color="primary">
+                    <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" :value="item.name" color="primary">
                         <template v-slot:prepend>
                             <v-icon :icon="item.icon"></v-icon>
                         </template>
@@ -23,7 +23,7 @@
                 </v-list>
             </v-card>
             <v-sheet class="flex-1 w-0">
-                <slot></slot>
+                <RouterView class="h-full"></RouterView>
             </v-sheet>
         </v-sheet>
         <!-- <v-sheet class="bg-grey-lighten-1">
@@ -48,22 +48,23 @@ const route = useRoute();
 const router = useRouter();
 
 
-const items = routes.filter(item=>!item.meta.hidden).map(item=>{
+const items = [...routes[1].children||[],...routes.slice(2)].filter(item=>!item.meta.hidden).map(item=>{
     return {
+        name: item.name,
         text: item.meta.title, 
         icon: item.meta.icon, 
         to:item.path
     }
-})
+})||[];
 
 router.beforeEach((to,from,next)=>{
     if(to.path){
-        current.value = [to.path]
+        current.value = [to.name||'']
     }
     next();
 })
 
-const current= ref([route.path||items[0].to]);
+const current= ref([route.name||items[0].name]);
 
 const links = [
     'Home',
