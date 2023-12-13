@@ -1,5 +1,7 @@
 <template>
     <div class="flex justify-start items-start content-start p-2 gap-2 bg-black">
+        
+        <h1>SVG Vue</h1>
         <div>
             <SvgBorder1></SvgBorder1>
         </div>
