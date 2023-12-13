@@ -25,9 +25,8 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "@/*":["src/*"]
-    },
-    "typeRoots": ["./node_modules/@types/","./types"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","types/**/*.d.ts", "src/views/particles/p.js"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","types/**/*.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -55,6 +55,38 @@ export const routes:AppRouteRecordRaw[]= [
             title:"跑马灯", 
             icon: 'mdi-flag'
         }
+    },
+    {
+        path:'/loading',
+        component:()=>import('@/views/AnimLoading/AnimLoading.vue'),
+        meta:{
+            title:"加载动画", 
+            icon: 'mdi-flag'
+        }
+    },
+    {
+        path:'/p5',
+        component:()=>import('@/views/p5/P5.vue'),
+        meta:{
+            title:"P5动画", 
+            icon: 'mdi-flag'
+        }
+    },
+    {
+        path:'/device',
+        component:()=>import('@/views/device/index.vue'),
+        meta:{
+            title:"设备", 
+            icon: 'mdi-flag'
+        }
+    },
+    {
+        path:'/svg',
+        component:()=>import('@/views/svg/SvgDemo.vue'),
+        meta:{
+            title:"SVG", 
+            icon: 'mdi-flag'
+        }
     }
 ]
 

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+aria-hidden="true" 
+class="iconify iconify--logos" 
+width="110"
+height="110"
+viewBox="-55 -55 110 110">
+    <defs>
+        <filter id="blur-2px">
+        <feGaussianBlur
+            in="SourceGraphic"
+            stdDeviation="1" />
+        </filter>
+    </defs>
+    <g fill="transparent" stroke="rgba(56, 189, 248,255)">
+        <circle filter="url(#blur-2px)" r="50" stroke-dasharray="25 7" 
+        stroke-dashoffset="10"
+            transform="rotate(0 0 100)" stroke-width="4">
+        </circle>
+        <circle r="50" stroke-dasharray="25 7" 
+        stroke-dashoffset="10"
+            transform="rotate(0 0 100) scale(0.9)" stroke-width="2">
+        </circle>
+        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 0 0" to="360 0 0"
+            dur="10s" repeatCount="indefinite" />
+    </g>
+</svg>

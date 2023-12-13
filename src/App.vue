@@ -4,7 +4,9 @@ import { Layout } from '@/layout'
 
 <template>
   <div class="fixed inset-0">
-    <RouterView class="h-full"></RouterView>
+    <Layout class="fixed inset-0">
+      <RouterView class="h-full"></RouterView>
+    </Layout>
   </div>
 </template>
 
